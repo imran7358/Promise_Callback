@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+       <div class="map_function">
+           <h1>Map</h1>
+           <p id="demo" style="font-size: 16px;"></p>
+       </div>
+
+       <div class="map_function">
+        <h1>Filter</h1>
+        <p id="filter" style="font-size: 21px;"></p>
+    </div>
+
+    <div class="map_function">
+        <h1>Reducer</h1>
+        <p id="reducer" style="font-size: 21px;"></p>
+    </div>
+
+
+    </body>
+    <script>
+        const arr=[1,2,3,4,5,20]
+        const mapFucntion=()=>{
+            const output = arr.map(double)
+            console.log(output)
+            document.getElementById('demo').innerHTML=arr.map(double)
+            document.getElementById('filter').innerHTML = arr.filter(FilterFunction)
+            document.getElementById('reducer').innerHTML = arr.reduce(ReducerFunction)
+        }
+       const double=(x)=>{
+           return x * 2
+       }
+        const FilterFunction=(age)=>{
+            return age >= 18
+        }
+        const ReducerFunction =(Total,acc)=>{
+            console.log(Total)
+            return Total - acc
+        }
+        mapFucntion();
+    </script>
+</html>
